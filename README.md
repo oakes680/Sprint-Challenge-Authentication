@@ -39,12 +39,24 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What is the purpose of using _sessions_?
+A session can be defined as a server-side storage of information that is desired to persist throughout the user's interaction with the web site or web application. 
+
+The concept is storing persistent data across page loads for a web visitor. Cookies store it directly on the client. Sessions use a cookie as a key of sorts, to associate with the data that is stored on the server side.
+
+It is preferred to use sessions because the actual values are hidden from the client, and you control when the data expires and becomes invalid. If it was all based on cookies, a user (or hacker) could manipulate their cookie data and then play requests to your sit
 
 - [ ] What does bcrypt do to help us store passwords in a secure manner.
+        bcrypt is an package that allows us to hash/encrypt passwords.  
 
 - [ ] What does bcrypt do to slow down attackers?
+ It uses a Key Factor (or Work Factor) which adjusts the cost of hashing. The ability to increase the cost (time and processing power) of hashing in the future as computers become more powerful is what really sets Bcrypt apart from other functions.
+
+Bcrypt can expand what is called its Key Factor to compensate for increasingly more-powerful computers and effectively “slow down” its hashing speed. Changing the Key Factor also influences the hash output, so this makes Bcrypt extremely resistant to rainbow table-based attacks. Newer computers can attempt to guess the original input of the hash, but it would still take the same amount of time (or longer) to verify whether its guess is a match or not. All this makes Bcrypt almost future proof!
 
 - [ ] What are the three parts of the JSON Web Token?
+Header. contains metadata about the type of token and the cryptographic algorithms used to secure its contents.
+Payload. contains verifiable security statements, such as the identity of the user and the permissions they are allowed
+Signature. used to validate that the token is trustworthy and has not been tampered with. You must verify this signature before storing and using a JWT.
 
 ## Minimum Viable Product
 
